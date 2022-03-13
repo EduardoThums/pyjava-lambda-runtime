@@ -45,13 +45,15 @@ aws lambda create-function \
     --function-name $LAMBDA_NAME \
     --role $LAMBDA_ROLE \
     --code ImageUri=$IMAGE_URI \
-    --package-type Image
+    --package-type Image \
+    2>/dev/null
 
 if [ ! $? -eq 0 ]; then
     echo "--> Lambda function already exists! Update instead"
     aws lambda update-function-code \
         --function-name $LAMBDA_NAME \
-        --image-uri $IMAGE_URI
+        --image-uri $IMAGE_URI \
+        2>/dev/null
 fi
 
 if [ $? -eq 0 ]; then

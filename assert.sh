@@ -9,7 +9,9 @@ fi
 
 aws lambda invoke \
     --function-name $LAMBDA_NAME \
-    out --log-type Tail \
+    out \
+    --log-type Tail \
     --query 'LogResult' \
     --output text | \
-    base64 -d
+    base64 -d && \
+    rm out

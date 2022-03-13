@@ -35,3 +35,14 @@ $ bash < $(curl -L https://raw.githubusercontent.com/EduardoThums/pyjava-lambda-
 ## Contributing
 
 Feel free to fork it, and if you think your changes can benefict others too, open a PR.
+
+
+To test the built image locally, create a docker container and use `curl` to make a POST request:
+
+```
+$ docker container run --rm -p 9000:8080 myfuncion:latest
+```
+
+```
+$ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
+```
