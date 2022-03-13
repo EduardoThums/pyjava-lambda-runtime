@@ -9,7 +9,7 @@ For those who need to have both Python's and Java's binaries available at the sa
 
 - [Docker](https://www.docker.com/)
 - [AWS CLI](https://aws.amazon.com/cli/)
-- An repository in the AWS ECR  
+- [AWS ECR](https://aws.amazon.com/ecr/)  
 
 **Disclaimer**: this is not a tutorial about how to create or configure a lambda at AWS, for now on I'm assuming
 you are confortable with the specific lambda's artifacts necessary run a lambda.
