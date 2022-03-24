@@ -1,9 +1,15 @@
 #!/bin/bash
 
-IMAGE_NAME=$1
+IMAGE_NAME=${1:-"--help"}
 REPOSITORY_URI=$2
 LAMBDA_NAME=$3
 LAMBDA_ROLE=$4
+
+if [[ $IMAGE_NAME == "-h" || $IMAGE_NAME == "--help" ]]; then 
+    echo "Exemple usage:"
+    echo "  ./deploy <image-name> <repo-uri> <lambda-name> <lambda-role>"
+    exit 0
+fi
 
 if [ -z $IMAGE_NAME ]; then
     echo "Missing image name!"
